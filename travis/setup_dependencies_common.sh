@@ -201,7 +201,11 @@ if [[ -z $CONDA_VERSION ]]; then
     if [[ $MAMBA == True ]]; then
         CONDA_VERSION=">=4.8"
     else
-        CONDA_VERSION=4.7.11
+	if [ `uname -m` = 'aarch64' ]; then
+           CONDA_VERSION=4.8.2
+        else
+           CONDA_VERSION=4.7.11
+        fi
     fi
 fi
 
