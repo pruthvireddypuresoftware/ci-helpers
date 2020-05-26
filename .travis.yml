@@ -2,10 +2,13 @@
 # on Travis. However, the language ends up being irrelevant anyway, since we
 # install Python ourselves using conda.
 language: c
-
+arch:
+    - amd64
+    - arm64
 os:
     - linux
-
+dist: bionic
+sudo: true
 env:
     global:
         - SETUP_CMD='test'
